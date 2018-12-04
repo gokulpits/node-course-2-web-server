@@ -32,7 +32,7 @@ return new Date().getFullYear()
 });
 
 hbs.registerHelper('changeCase',(text)=>{
-return text.toLowerCase();
+return text.toUpperCase();
 })
 
 app.get('/',(req,res)=>{
@@ -47,10 +47,18 @@ app.get('/',(req,res)=>{
 app.get('/about',(req,res)=>{
    res.render('about.hbs',{
        title:'About Page',
-       subTitle : "Abouts page",
-       message :"SAMPLE MESSAGE"
+       subTitle : "About page",
+       message :"sample about message"
       
    });
+})
+
+app.get('/project',(req,res)=>{
+    res.render('project.hbs',{
+        title:'Project Page',
+        subTitle : "Project page",
+        message :"Here the list of projects"
+    })
 })
 
 app.get('/bad',(re,res)=>{
